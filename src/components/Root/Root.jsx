@@ -1,9 +1,15 @@
 import React from 'react';
+import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const Root = () => {
     return (
         <div>
-            hello from root
+            <NavBar> </NavBar>
+            <Outlet> </Outlet>
+            <Footer></Footer>
         </div>
     );
 };
