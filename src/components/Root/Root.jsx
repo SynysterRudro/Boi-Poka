@@ -6,7 +6,7 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 
 const Root = () => {
     return (
-        <div>
+        <div className='max-w-6xl mx-auto'>
             <NavBar> </NavBar>
             <Outlet> </Outlet>
             <Footer></Footer>
@@ -14,4 +14,4 @@ const Root = () => {
     );
 };
 
-export default Root;
+export default Root; 
