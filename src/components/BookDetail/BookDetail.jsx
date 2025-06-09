@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { addStoredReadList } from '../../utitlity/addtoDb';
+import { addStoredWishList } from '../../utitlity/adtoWish';
 
 const BookDetail = () => {
 
@@ -7,14 +9,26 @@ const BookDetail = () => {
 
     const { booksId } = useParams();
     const id = parseInt(booksId);
-    console.log(id);
+    // console.log(id);
 
     const data = useLoaderData();
-    console.log(data);
-
+    // console.log(data);
+    // 
 
     const book = data.find(book => book.bookId === id);
-    console.log(book);
+    // console.log(book);
+
+
+    const handleMarkAsRead = (id) => {
+        // console.log(`Book with ID ${book.bookId} marked as read.`);
+        addStoredReadList(id);
+    }
+
+    const handleMarkAsWish = (id) => {
+        // console.log(`Book with ID ${book.bookId} marked as read.`);
+        addStoredWishList(id);
+    }
+
 
     return (
 
@@ -32,8 +46,8 @@ const BookDetail = () => {
                 <p> <p className='font-bold'>Review :</p> <br />{book.review}</p>
 
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Read</button>
-                    <button className="btn btn-primary">Wishlist</button>
+                    <button className="btn btn-success" onClick={() => { handleMarkAsRead(book.bookId) }}>Mark as Read</button>
+                    <button className="btn btn-success" onClick={() => { handleMarkAsWish(book.bookId) }}>Add To Wishlist</button>
 
                 </div>
             </div>
