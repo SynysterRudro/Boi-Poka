@@ -11,6 +11,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './Home/Home.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import BookDetail from './components/BookDetail/BookDetail.jsx';
+import ListedBooks from './components/ListedBooks/ListedBooks.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
         element: <BookDetail></BookDetail>,
         // adding a loader function to fetch book details
         loader: () => fetch('/booksData.json')
+      },
+      {
+        path: '/listedBooks',
+        element: <ListedBooks></ListedBooks>,
+        loader: () => fetch('/booksData.json') // do not load all data for some and dont use same data again, this is just for demo purpose
       },
       {
         path: "/dashboard",
