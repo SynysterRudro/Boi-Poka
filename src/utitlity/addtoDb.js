@@ -29,7 +29,7 @@ const addStoredReadList = (id) => {
 
         // ideally we are not going to use toast here 
 
-        toast('This is book is added to your read list');
+        toast('This book is marked as read');
     }
 }
 

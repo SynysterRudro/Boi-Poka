@@ -16,7 +16,7 @@ const ListedBooks = () => {
 
     // because we are adding outside data so there will be a side effect
     useEffect(() => {
-        const storedReadList = getStoredWishList();
+        const storedReadList = getStoredReadList();
         // console.log(storedReadList, allBooks);
 
         const storedReadListInt = storedReadList.map(id => parseInt(id));
