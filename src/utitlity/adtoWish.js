@@ -1,3 +1,5 @@
+import toast from "daisyui/components/toast";
+
 const getStoredWishList = () => {
 
     const storedWishList = localStorage.getItem('wish-list');
@@ -24,6 +26,7 @@ const addStoredWishList = (id) => {
         storedWishList.push(id);
         const storedListStr = JSON.stringify(storedWishList);
         localStorage.setItem('wish-list', storedListStr);
+        toast('This book is added to your wish list');
     }
 }
 

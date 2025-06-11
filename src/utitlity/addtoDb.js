@@ -1,3 +1,5 @@
+import toast from "daisyui/components/toast";
+
 const getStoredReadList = () => {
 
     const storedReadList = localStorage.getItem('read-list');
@@ -24,6 +26,10 @@ const addStoredReadList = (id) => {
         storedReadList.push(id);
         const storedListStr = JSON.stringify(storedReadList);
         localStorage.setItem('read-list', storedListStr);
+
+        // ideally we are not going to use toast here 
+
+        toast('This is book is added to your read list');
     }
 }
 
